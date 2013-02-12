@@ -1,0 +1,47 @@
+<div class="profile">
+<h3>User's profile</h3>
+	<table>
+		<tr>
+		    <td>
+		      	 <%= gravatar_for(@user,100) %>
+		    </td>
+		    <td>
+		      <h1> <%= @user.name %></h1><br/>
+		      		      <% if current_user!=nil && current_user.admin?  %>
+		  <%= link_to "delete", @user, :method => :delete, :confirm => "You sure?",
+		                                :title => "Delete #{@user.name}" %>
+		 		<% end %>
+		 	 <% if current_user!=nil && current_user!=@user %>
+		  <%= link_to "Personal Challenge", new_challenge_path(:personal => 1,:user_to => @user) %>
+<% end %>
+
+		    </td>
+		    <td>
+					<ul>
+							<li><strong>Rank: </strong> <%=rank_user(@user)%>/<%=User.find(:all).count%>
+							<li><strong>Challenges points: </strong> <%= @user.challpts %></li>
+							<li><strong>Challenges Taken: </strong> <%= @user.challenges.count %></li>
+		   					<li><strong>Challenges Followed: </strong> <%= @user.feed.count %></li>
+		   					<li><strong>Challenges Proposed: </strong> <%= Challenge.find_all_by_proposer(@user.id).count %></li>
+							<li><strong>Actions: </strong> <%= @user.actions %></li> 
+		   				<%if current_user==@user%>
+							<li><strong>Edit your profile</strong> <%= link_to "here", edit_user_path(@user) %></li>
+						<%end%>
+					</ul>
+		    </td>
+		  </tr>
+</table>
+<table  class="menu_user_and_challenge round">	
+	<tr>
+		<td><%= link_to "Challenges taken", user_path(@user)+"?what_to_display=taken" %></td>
+		<td><%= link_to "Challenges proposed", user_path(@user)+"?what_to_display=proposed" %></td>
+		<td><%= link_to "Challenges followed", user_path(@user)+"?what_to_display=followed"%></td>
+		<td><%= link_to "Personal Challenges", user_path(@user)+"?what_to_display=personal" %></td>
+		
+	</tr>   
+</table>
+
+<table class="what_to_display">	
+        <%= render 'what_to_display' %></table>
+
+</div>	

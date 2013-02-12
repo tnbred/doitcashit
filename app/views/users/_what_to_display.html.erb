@@ -1,0 +1,62 @@
+	<tr>
+		  	<% if @what_to_display=="taken" %>
+		    	<td>
+		    	  <h3>Challenges taken by <%= @user.name %></h3>
+		
+					<% if @challenges==nil %>
+		          		<%= render @challenges %>
+		        		<%= will_paginate @challenges %>
+		
+		      		<% else%>
+		      			<%= @user.name %> did not take any challenge 
+		      		<% end %>
+		    	</td> 	
+		
+		  	<% elsif @what_to_display=="proposed" %>
+		  	   <td>
+		    	   <h3>Challenges proposed by <%= @user.name %></h3> 
+		  			<% if @challenges.empty? %>
+		  		 		<%= @user.name %> did not propose any challenge
+		  			<%else%>
+						<%= render @challenges %>
+						<%= will_paginate @challenges %>
+		        	<%end%>
+		       </td>
+		  	<% elsif @what_to_display=="followed" %>
+		    		<td>
+		    	     	<h3>Challenges followed by <%= @user.name %></h3> 
+		    				<% unless @feed_items.empty? %>
+		    					<%= render  'shared/feed_challenge'  %>
+		        			    <%= will_paginate @feed_items  %>					
+		    				<%else%>
+		    		          <%= @user.name %> does not follow any challenge
+	
+						<%end%>
+				  </td>
+			<% elsif @what_to_display == "personal"%>	  
+				
+		    		<td>
+		    	     	<h3>Personal challenges for <%= @user.name %></h3> 
+		    			<% if @challenges.empty? %>
+		    				<%= @user.name %> does not follow any challenge
+		    			<%else%>
+							<%= render @challenges %>
+		        			<%= will_paginate @challenges %>		
+						<%end%>
+				  </td> 
+		   <% else %>
+		   <% if current_user == @user %>
+		   		   <td>
+		    	     	<h3>New personal challenges for <%= @user.name %></h3> 
+		    			<% if @challenges.empty? %>
+		    				<%= @user.name %> does not follow any challenge
+		    			<%else%>
+							<%= render @challenges %>
+		        			<%= will_paginate @challenges %>		
+						<%end%>
+				  </td>
+		   <% else %>
+
+			<% end %>	  		   
+		  	<%end%>
+	</tr>	  

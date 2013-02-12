@@ -1,0 +1,19 @@
+<table summary="Information about following/followers">
+  <tr>
+    <td class="main">
+      <h1><%= @title %></h1>
+
+      <% unless @challenges.empty? %>
+        <ul class="users">
+          <%= render @challenges %>
+        </ul>
+        <%= will_paginate @challenges %>
+      <% end %>
+    </td>
+      <td class="sidebar round">
+      <strong>Name</strong> <%= @user.name %><br />
+      <strong>URL</strong> <%= link_to user_path(@user), @user %><br />
+      <strong>Challenges</strong> <%= @user.challenges.count %>
+    </td>
+   </tr>
+</table>

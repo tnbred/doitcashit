@@ -1,0 +1,7 @@
+<%= javascript_include_tag :defaults %>
+<% form_tag challenges_path, :action=>'search', :method => 'get' do %>
+     <%=text_field_tag :search, params[:search], :id => 'search_field', :value=>'type a keyword',
+     	 :onfocus=>"if(this.value=='type a keyword')this.value=''"%>
+     <%=submit_tag "Search", :name => nil, :id=>'submit_search'%> 
+     <%=hidden_field :search_done, :value=> true%>
+<% end %>

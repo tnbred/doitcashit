@@ -1,0 +1,25 @@
+<form>
+<select name="challtype" onchange="this.form.submit()">
+  <option value="all" <% if @challtype == "all" %> selected="selected" <% end %>>All Challenges</option>
+  <option value="regular" <% if @challtype == "regular" %> selected="selected" <% end %>>Regular Challenges</option>
+  <option value="personal" <% if @challtype == "personal" %> selected="selected" <% end %>>Personal Challenges</option>
+</select>
+<noscript><input type="submit" value="Submit"></noscript>
+</form>
+<table class="menu_user_and_challenge round">
+    <tr>
+      <td><%= link_to "No challenger", challenges_path+"?visibility=new"+"&challtype=#{@challtype}" %></td>
+      <td><%= link_to "Need more actions", challenges_path+"?visibility=awaiting"+"&challtype=#{@challtype}" %> </td>
+      <td><%= link_to "Scheduled challenges", challenges_path+"?visibility=running"+"&challtype=#{@challtype}" %> </td>
+      <td><%= link_to "Completed Challenges", challenges_path+"?visibility=completed"+"&challtype=#{@challtype}" %> </td>      
+  	  <% if current_user!=nil && current_user.admin?%>	      
+	    <td><%= link_to "Validate", challenges_path+"?visibility=admin"+"&challtype=#{@challtype}" %></td>
+	  <% end %>  
+    </tr>
+</table>
+  
+  <br />
+  
+
+
+

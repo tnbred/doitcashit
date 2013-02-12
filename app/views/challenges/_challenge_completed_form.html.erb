@@ -1,0 +1,17 @@
+<%= form_for @challenge do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.hidden_field :completed, :value=>true%>
+  </div>
+  <div class="field">
+  	<%= f.label :videolink %><br />
+    <%= f.text_field :videolink %>
+  </div>
+  <div class="field">
+    <label for="user_password">Current password</label><br />
+    <input id="user_password" name="user[password]" size="30" type="password" />
+  </div>   
+  <div class="actions">
+    <%= f.submit "Complete Challenge!" %>
+  </div>
+<% end %>

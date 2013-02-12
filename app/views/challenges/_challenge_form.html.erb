@@ -1,0 +1,63 @@
+
+<table>
+	<tr>
+		<td class="search2">
+			<input type="checkbox" name="kind_chall" id="kind_chall" rel="perso_chal" onchange="CleanPersoChall()" 
+			<%if !params[:search_done].nil? || !@user_to.nil?%>
+				 checked="yes"
+			<%end%>
+			/>
+				Personal Challenge
+		</td>
+	</tr>
+
+	<tr rel="perso_chal">
+		<td class="search2" >
+		<% form_tag new_challenge_path, :action=>'search', :method => 'get' do %>
+	    <%=text_field_tag :search, params[:search], :id => 'challpers1', :value=>'find a user',
+	     	 :onfocus=>"if(this.value=='find a user')this.value=''", %>
+	     <%=submit_tag "Search", :name => nil, :id=>'challpers2', %> 
+	     <%=hidden_field :search_done, :value=> true%>
+		<% end %>
+
+		<%if !params[:search_done].nil?%>
+ 			<%@users=User.search(params[:search]).paginate(:page => params[:page],:per_page => 10)%>
+
+  			<div class="search_message">
+ 				<% @users.each do |user| %>
+   					<li><%=link_to user.name, new_challenge_path+"?user_to=#{user.name}"%></li>
+  				<% end %>
+			</div>
+		<%end%>
+		</td>
+	</tr>
+</table>
+	
+			<%= form_for @challenge do |f| %>
+	  		<%= render 'shared/error_messages', :object => f.object %>
+	  		<%if !@user_to.nil?%>
+	  			<div class="field">
+	  				<%= f.label :user_to %><br/>
+	    			<%= f.text_field :user_to , :value=>@user_to , :id=>'perso_chal'  %>
+	  			</div>
+	  		<%end%>
+		<div class="field">
+	  	<%= f.label :actions_required %><br />
+	    <%= f.number_field :actions_required %>
+		</div>
+	  
+	  <div class="field">
+	    <%= f.label :title %><br />
+	    <%= f.text_field :title %>
+	  </div>
+	  
+
+	  
+	  <div class="field">
+	  	<%= f.label :content %><br />
+	    <%= f.text_area :content %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit "Submit" %>
+	  </div >		
+	<% end %>

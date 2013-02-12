@@ -1,0 +1,6 @@
+<% unless @food_items.empty?%>
+  <table class="micropost" summary="Challenge user">
+    <%= render :partial => 'shared/food_item', :collection => @food_items %>
+  </table>
+  <%= will_paginate @food_items %>
+<% end%>

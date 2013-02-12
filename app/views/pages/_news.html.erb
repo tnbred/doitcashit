@@ -1,0 +1,44 @@
+
+<div class="js-stream-items stream-items" id="stream-items-id"><div class="js-stream-item stream-item" data-item-id="140882177163399169" data-item-type="tweet" id="stream-item-tweet-140882177163399169"><div class="more">�</div>
+<div class="stream-item-content tweet js-actionable-tweet js-stream-tweet stream-tweet  " data-is-reply-to="false" data-tweet-id="140882177163399169" data-item-id="140882177163399169" data-screen-name="FT" data-user-id="18949452">
+  <div class="tweet-dogear"></div>
+  <div class="tweet-image">
+      <img src="Twitter%20_%20Home_files/FT-square-72_normal.png" alt="Financial Times" class="user-profile-link js-action-profile-avatar" data-user-id="18949452" height="48" width="48">
+  </div>
+  <div class="tweet-content">
+    <div class="tweet-row">
+              <span class="tweet-user-name">
+  <a class="tweet-screen-name user-profile-link js-action-profile-name" data-user-id="18949452" href="https://twitter.com/#%21/FT" title="Financial Times"><%= news.title %></a>
+  <span class="tweet-full-name">Posted <%= time_ago_in_words(news.created_at) %> ago by <%= link_to User.find_by_id(news.user_id.to_i).name, User.find_by_id(news.user_id.to_i) %></span>
+  </span>
+      <div class="tweet-corner">
+        <div class="tweet-meta">
+  <span class="icons">
+    <div class="extra-icons">
+              <span class="inlinemedia-icons js-icon-container"></span>
+        </div>
+  </span>
+</div>
+      </div>
+    </div>
+    <div class="tweet-row">
+      <div class="tweet-text js-tweet-text"><%= news.content %><a href="http://t.co/ArWGTicF" data-expanded-url="http://on.ft.com/sN9iV9" title="http://on.ft.com/sN9iV9" target="_blank" rel="nofollow" class="twitter-timeline-link">on.ft.com/sN9iV9</a> <a href="https://twitter.com/#%21/search?q=%23FinancialTimes" title="#FinancialTimes" class="  twitter-hashtag pretty-link" rel="nofollow"><s class="hash">#</s><b>FinancialTimes</b></a></div>
+    </div>
+          <div class="tweet-row">
+        <a href="https://twitter.com/#%21/FT/status/140882177163399169" class="tweet-timestamp js-permalink" title="2:58 PM, Nov 27th"><span class="_timestamp" data-time="1322423903000" data-long-form="true">15 minutes ago</span></a>
+        <span class="tweet-actions js-actions" data-tweet-id="140882177163399169">
+      <span class="tweet-action action-favorite">
+              <a href="#" class="favorite-action js-toggle-fav" title="Favorite"><span><i></i><b>Favorite</b></span></a>
+                        </span>
+                  <span class="tweet-action action-retweet">
+          <a href="#" class="retweet-action js-toggle-rt" title="Retweet"><span><i></i><b>Retweet</b></span></a>
+                                    </span>
+      <a href="#" class="reply-action js-action-reply" data-screen-name="FT" title="Reply"><span><i></i><b>Reply</b></span></a>
+    </span>
+      </div>
+                                                      <div class="tweet-row tweet-activity tweet-activity-retweets">
+                </div>
+              <div class="tweet-row tweet-activity tweet-activity-favorites"></div>
+            </div>
+</div></div>
+

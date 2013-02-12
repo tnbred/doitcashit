@@ -1,0 +1,38 @@
+
+<h1>Update your information</h1>
+CE SERA LA OU ON VA ACHETER DES ACTIONS (la j'ai mis les champs dans le form pour pouvoir tester)
+
+<%= form_for(current_user) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password, "New password" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "New password confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <label for="user_password_old">Current password</label><br />
+    <input id="user_password_old" name="user[password_old]" size="30" type="password" />
+  </div>  
+  <div class="field">
+    <%= f.label :actions, "Cheat des actions" %><br />
+    <%= f.text_field :actions %>
+  </div>
+  <div class="field">
+    <%= f.label :challpts, "Cheat des challpts" %><br />
+    <%= f.text_field :challpts %>
+  </div>    
+  <div class="actions">
+    <%= f.submit "Update your profile" %>
+  </div>
+<% end %>
