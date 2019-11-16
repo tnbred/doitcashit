@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Do it & cash it</title>
+  {{> assets/css}}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      {{> shared/header}}  
+    </div>
+    <div class="row">
+      {{{body}}}
+    </div>
+
+    <div class="row">
+      {{> shared/footer}}  
+    </div>
+  </div>
+
+  {{> assets/js}}
+</body>
+</html>

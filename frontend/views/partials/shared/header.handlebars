@@ -1,0 +1,54 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">
+          <img alt="Do it & cash it" src="/img/logo.png" height="20">
+        </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dici-navbar-content" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Do it & cash it</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="dici-navbar-content">
+        <ul class="nav navbar-nav">
+        {{#if discoverPage}}
+          <li class="active"><a href="/discover">Discover <span class="sr-only">(current)</span></a></li>
+        {{else}}
+          <li><a href="/discover">Discover</a></li>
+        {{/if}}
+        {{#if submitChallengePage}}
+          <li class="active"><a href="/challenges/new">Create a challenge <span class="sr-only">(current)</span></a></li>
+        {{else}}
+          <li><a href="/challenges/new">Create a challenge</a></li>
+        {{/if}}
+        {{#if aboutUsPage}}
+          <li class="active"><a href="/about">About us <span class="sr-only">(current)</span></a></li>
+        {{else}}
+          <li><a href="/about">About us</a></li>
+        {{/if}}
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+        {{#if metaData.current_user}}
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+        </ul>
+        {{else}}
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/signup">Sign up</a></li>
+          <li><a href="/login">Log in</a></li>
+        </ul>
+        {{/if}}
+      </div>
+    </div>
+  </nav>
+</header>

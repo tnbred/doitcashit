@@ -1,0 +1,22 @@
+{
+  "name": "doitcashit-lib",
+  "version": "1.0.0",
+  "description": "Lib of shared objects between doitcashit apps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnbredillet/doitcashit-lib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tnbredillet/doitcashit-lib/issues"
+  },
+  "homepage": "https://github.com/tnbredillet/doitcashit-lib#readme"
+}

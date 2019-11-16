@@ -1,0 +1,97 @@
+body {
+  font-size: 10px;
+}
+
+nav {
+  font-size: 14px;
+}
+
+span.glyphicon-search {
+  margin-right: 10px;
+}
+
+a.navbar-brand {
+  margin-right: 35px;
+  margin-left: 35px;
+}
+
+div.c-l-width {
+  height: 75vh;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+div.big-div {
+  height: 75vh;
+}
+
+div.top-space {
+  margin-top: 15vh;
+}
+
+div.c-l-width.popular-challenges {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 5vh;
+}
+
+img.clg-thumbnail {
+  width: 100%;
+  height: 150px;
+}
+div.pale-bg {
+  background-color: #F7FAFA;
+}
+
+.carousel-inner>.item>a>img.home-carousel, 
+.carousel-inner>.item>img.home-carousel,
+.thumbnail a>img.home-carousel,
+.thumbnail>img.home-carousel {
+  width: 100%;
+  height: 75vh;
+}
+
+div.home-explain {
+  font-size: 14px;
+  background-color: #DEF7E0;
+}
+
+div.centered-v>div {
+  margin-top: 15vh;
+}
+
+div.presentation {
+  background-color: #FFBDAB;
+  font-size: 14px;
+  text-align: center;
+  height: 55vh;
+}
+
+div.head-presentation {
+  margin-bottom: 15vh;
+}
+
+div.authors-wrapper {
+  padding-top: 12vh;
+}
+
+.authors { 
+  text-align: justify;
+}
+
+.authors h3 { border-bottom-width: thin; border-bottom-style: dotted; }
+
+.authors small { font-size: 15px; }
+
+.motivation {
+  height: 175vh;
+  background-image: url("/img/create-bkg.jpg");
+  background-size:cover;       /* Scale to fit optimistically */
+  background-position:center;  /* Scale from center */
+  width:100%;                  /* Same width as parent */
+  height:100%;                 /* Same height as parent */
+}
+.no-bkg {
+  background-color: #61D2D6;
+  border: 0px;
+}

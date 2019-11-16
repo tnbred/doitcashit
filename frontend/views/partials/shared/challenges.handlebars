@@ -1,0 +1,27 @@
+{{#each challenges}}
+    <div class="col-md-4">
+      <div class="thumbnail">
+        <img src="/img/placeholder.png" alt="{{name}}" class="clg-thumbnail">
+        <div class="caption">
+          <h5>{{name}} <small>by Author</small></h5>
+          <p>Cogito ergo sum {{excerpt}}</p>
+          <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+              <span class="sr-only">40% Complete (success)</span>
+            </div>
+          </div> <!--progress-->
+          <div class="row">
+            <div class="col-md-4">
+              <p><b>40%</b> funded</p>
+            </div>
+            <div class="col-md-4">
+              <p><b>{{goal}}$</b> pledged</p>
+            </div>
+            <div class="col-md-4">
+              <p><b>{{created_at}}</b> days to go.</p>
+            </div>
+          </div> <!--row-->
+        </div> <!--caption-->
+      </div> <!--thumbnail-->
+    </div> <!--row-->
+  {{/each}}
