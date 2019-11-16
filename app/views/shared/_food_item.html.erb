@@ -1,8 +1,0 @@
-<tr>
-	<%@user_follower=User.find_by_id(food_item.user_id)%>
-  <td class="micropost">
-    <span class="content">      
-      <%= link_to @user_follower.name,user_path(food_item.user_id)%> gave <%= food_item.actions %> actions.
-    </span>
-   </td>
- </tr>
